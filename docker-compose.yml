@@ -7,6 +7,7 @@ services:
       args:
         WWWGROUP: '${WWWGROUP}'
         WWWUSER: '${WWWUSER}'
+    container_name: web
     user: '${WWWUSER:-1000}:${WWWGROUP:-1000}'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
