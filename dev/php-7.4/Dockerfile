@@ -3,6 +3,8 @@ FROM php:7.4-apache
 ARG WWWGROUP
 ARG WWWUSER
 
+WORKDIR /var/www/html
+
 RUN apt-get update && apt-get install -y libcurl4-openssl-dev libxml2-dev
 RUN apt-get install zlib1g-dev
 
@@ -37,3 +39,7 @@ RUN groupadd --force -g $WWWGROUP dev
 RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u $WWWUSER dev
 
 RUN usermod -u $WWWUSER dev
+
+RUN apt-get update && apt-get install apt-file -y && apt-file update && apt-get install vim nano -y 
+RUN a2enmod rewrite
+

@@ -8,10 +8,13 @@ services:
         WWWGROUP: '${WWWGROUP}'
         WWWUSER: '${WWWUSER}'
     user: '${WWWUSER:-1000}:${WWWGROUP:-1000}'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     ports: 
       - '${APP_PORT:-80}:80'
     volumes:
       - './src:/var/www/html'
+      - './dev/php-${PHP_VERSION}/000-default.conf:/etc/apache2/sites-enabled/000-default.conf'
     networks: 
       - devmachine
     depends_on:
