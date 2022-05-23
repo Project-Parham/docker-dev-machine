@@ -34,6 +34,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes: 
       - 'dev-mysql:/var/lib/mysql'
+      - './dev/mysql/my.cnf:/etc/my.cnf'
     networks: 
       - devmachine
     healthcheck:
