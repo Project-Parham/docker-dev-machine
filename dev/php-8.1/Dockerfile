@@ -46,4 +46,3 @@ RUN curl -sLS https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm
 RUN a2enmod rewrite
-

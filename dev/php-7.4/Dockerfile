@@ -27,7 +27,7 @@ RUN \
     docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-install ldap
 
-RUN pecl install xdebug-2.8.1 && docker-php-ext-enable xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN docker-php-ext-install bcmath curl exif fileinfo  intl
 RUN docker-php-ext-install mysqli pdo pdo_mysql soap
 
