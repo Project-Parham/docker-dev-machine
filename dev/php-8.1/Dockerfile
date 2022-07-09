@@ -28,6 +28,7 @@ RUN \
     docker-php-ext-install ldap
 
 RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install grpc && docker-php-ext-enable grpc
 RUN docker-php-ext-install bcmath curl exif fileinfo  intl
 RUN docker-php-ext-install mysqli pdo pdo_mysql soap
 
