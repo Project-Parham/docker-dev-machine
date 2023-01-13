@@ -46,5 +46,7 @@ RUN apt-get update && apt-get install apt-file -y && apt-file update && apt-get 
 RUN curl -sLS https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm
+RUN apt-get update && apt-get install -y libzip-dev
+RUN docker-php-ext-install zip
 RUN a2enmod rewrite
 
