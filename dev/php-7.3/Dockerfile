@@ -45,6 +45,7 @@ RUN curl -sLS https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
     && npm install -g npm
 RUN apt-get update && apt-get install -y libzip-dev
 RUN docker-php-ext-install zip
+RUN apt-get install -y rsync
 RUN a2enmod rewrite
 RUN mkdir /var/logs/xdebug -p && touch /var/logs/xdebug/xdebug.log && chown -R dev:dev /var/logs
 
