@@ -7,7 +7,6 @@ ARG NODE_VERSION=16
 WORKDIR /var/www/html
 
 RUN apt-get update && apt-get install -y libcurl4-openssl-dev libxml2-dev
-RUN apt-get install zlib1g-dev
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
